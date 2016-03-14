@@ -48,8 +48,9 @@ def post():
         jobid = req['jobid']
         callback = req['callback']
         geometries = req['geometry']
+        projectname = req['projectname']
     except KeyError as e:
-        msg = json.dumps({"message":"Jobid, callback or geometries data not found. These are required fields in your JSON."})
+        msg = json.dumps({"message":"Jobid, callback or geometries or projectname data not found. These are required fields in your JSON."})
         return Response(msg, status=400, mimetype='application/json')
 
     gjData = geojson.loads(json.dumps(geometries))
@@ -67,7 +68,7 @@ def post():
             allFeats.append(feature)
 
         fc = {"type":"FeatureCollection", "features":allFeats}
-    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = 'https://www.geodesignhub.com/api/v1/', project_id='91cb24d7cd1feb2b', token='6858b59a256e5dc0028dd3261dafb2e1c1ead912')
+    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = 'https://www.geodesignhub.com/api/v1/', project_id='cf808e25160fb7f0', token='d75393abe78ae71c87750ef71c2ac0bf2afeb093')
     	upload = myAPIHelper.post_gdservice_JSON(geometry=fc, jobid=jobid)
         print upload.status_code
 
