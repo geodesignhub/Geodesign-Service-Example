@@ -80,7 +80,7 @@ def post():
     return Response(op, status=200, mimetype='application/json')
 
 if __name__ == '__main__':
-    app.debug = True
+    # app.debug = True
     port = int(os.environ.get("PORT", 5001))
     app.run(port =port)
 
