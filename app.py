@@ -70,7 +70,7 @@ def post():
         fc = {"type":"FeatureCollection", "features":allFeats}
     	myAPIHelper = GeodesignHub.GeodesignHubClient(url = config.apisettings['serviceurl'], project_id=config.apisettings['projectid'], token=config.apisettings['apitoken'])
     	upload = myAPIHelper.post_gdservice_JSON(geometry=fc, jobid=jobid)
-        print upload.status_code
+        # print upload.status_code
 
     else:
         msg = json.dumps({"message":"Invalid GeoJSON submitted."})
@@ -81,6 +81,6 @@ def post():
     return Response(op, status=200, mimetype='application/json')
 
 if __name__ == '__main__':
-    # app.debug = True
+    app.debug = True
     port = int(os.environ.get("PORT", 5001))
     app.run(port =port)
