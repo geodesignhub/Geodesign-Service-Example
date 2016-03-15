@@ -3,7 +3,7 @@ from functools import wraps
 from flask import request, Response
 import json, geojson, requests
 import random,os
-import GeodesignHub
+import GeodesignHub, config
 
 def check_auth(username, password):
     """This function is called to check if a username /
@@ -68,7 +68,7 @@ def post():
             allFeats.append(feature)
 
         fc = {"type":"FeatureCollection", "features":allFeats}
-    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = 'https://www.geodesignhub.com/api/v1/', project_id='Your_GeodesignHub_Project_ID', token='YOUR_GeodesignHub_API_Token')
+    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = config.apisettings['serviceurl'], project_id=config.apisettings['projectid'], token=config.apisettings['apitoken'])
     	upload = myAPIHelper.post_gdservice_JSON(geometry=fc, jobid=jobid)
         print upload.status_code
 
@@ -84,4 +84,3 @@ if __name__ == '__main__':
     # app.debug = True
     port = int(os.environ.get("PORT", 5001))
     app.run(port =port)
-
