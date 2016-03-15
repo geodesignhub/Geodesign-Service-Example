@@ -68,7 +68,7 @@ def post():
             allFeats.append(feature)
 
         fc = {"type":"FeatureCollection", "features":allFeats}
-    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = 'https://www.geodesignhub.com/api/v1/', project_id='cf808e25160fb7f0', token='d75393abe78ae71c87750ef71c2ac0bf2afeb093')
+    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = 'https://www.geodesignhub.com/api/v1/', project_id='Your_GeodesignHub_Project_ID', token='YOUR_GeodesignHub_API_Token')
     	upload = myAPIHelper.post_gdservice_JSON(geometry=fc, jobid=jobid)
         print upload.status_code
 
