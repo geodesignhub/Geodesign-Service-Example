@@ -50,7 +50,7 @@ def post():
         geometries = req['geometry']
         projectname = req['projectname']
     except KeyError as e:
-        msg = json.dumps({"message":"Jobid, callback or geometries or projectname data not found. These are required fields in your JSON."})
+        msg = json.dumps({"message":"Four parameters are required: jobid, callback, geometry and Geodesign Hub projectname. One or more of these were not found in your JSON request."})
         return Response(msg, status=400, mimetype='application/json')
 
     gjData = geojson.loads(json.dumps(geometries))
