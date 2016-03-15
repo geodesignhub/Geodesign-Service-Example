@@ -1,0 +1,6 @@
+{
+  "name": "Sample Geodesign Micro Service",
+  "description": "A barebones Geodesign Service app using Flask",
+  "repository": "https://github.com/geodesignhub/Geodesign-Service-Example/",
+  "keywords": ["geodesign", "service", "flask", "impacts", "evaluaions"]
+}
