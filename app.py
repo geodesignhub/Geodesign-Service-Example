@@ -9,7 +9,7 @@ def check_auth(username, password):
     """This function is called to check if a username /
     password combination is valid.
     """
-    return username == 'impactgen' and password == 'remote2016'
+    return username == 'admin' and password == 'secret'
 
 def authenticate():
     """Sends a 401 response that enables basic auth"""
