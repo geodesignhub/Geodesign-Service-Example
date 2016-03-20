@@ -5,7 +5,7 @@ This uses Python [Flask](http://flask.pocoo.org/) and also provides basic servic
 
 #### To create and deploy your own geodesign service
 1. Fork this repository.
-2. Modify config.py to have your own account credentials. You can get you Geodesign Hub API key [here](https://www.geodesignhub.com/api/token/)
+2. Modify config.py to have your own account credentials. You can get you Geodesign Hub API key [here](https://www.geodesignhub.com/api/token/) and you must be a participant to the project that this service submits data to.
 3. Review the [post](https://github.com/geodesignhub/Geodesign-Service-Example/blob/master/app.py#L69) method in app.py, and modify accordingly with your code. 
 4. Deploy to Heroku.
 
