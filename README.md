@@ -4,8 +4,8 @@ A example geodesign Impacts service that can be linked to Geodesign Hub. Once de
 This uses Python [Flask](http://flask.pocoo.org/) and also provides basic service authentication. 
 
 #### To create and deploy your own geodesign service
-1. Fork this repository to your own account. 
-2. Modify config.py to have your own account credentials
+1. Fork this repository.
+2. Modify config.py to have your own account credentials. You can get you Geodesign Hub API key [here](https://www.geodesignhub.com/api/)
 3. Look at post method in app.py, and modify accordingly with your code. 
 4. Deploy to Heroku.
 
