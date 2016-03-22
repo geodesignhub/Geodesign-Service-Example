@@ -1,5 +1,5 @@
 apisettings = {
-  "serviceurl": "https://www.geodesignhub.com/api/v1/",
-  "projectid": "91cb24d7cd1feb2b",
-  "apitoken": "6858b59a256e5dc0028dd3261dafb2e1c1ead912"
+  "serviceurl": "http://local.dev:8000/api/v1/",
+  "projectid": "549b55f7643affb4",
+  "apitoken": "b4d4953c4b1a3842005ae9c83288dca6f48fbcbe	"
 }

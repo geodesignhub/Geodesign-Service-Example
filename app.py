@@ -81,15 +81,16 @@ def post():
     	upload = myAPIHelper.post_gdservice_JSON(geometry=fc, jobid=jobid)
         # if status code is 202 / Accepted then all Ok
         if upload.status_code == 202:
-            op = json.dumps ({"message":"OK"})
-            return Response(op, status=200, mimetype='application/json')
+            pass
+
 
     else:
         # If invalid geoJSON is submitted, return a 400 message.
         msg = json.dumps({"message":"Invalid GeoJSON submitted."})
         return Response(msg, status=400, mimetype='application/json')
 
-
+    op = json.dumps ({"message":"OK"})
+    return Response(op, status=200, mimetype='application/json')
 if __name__ == '__main__':
     app.debug = True
     port = int(os.environ.get("PORT", 5001))
