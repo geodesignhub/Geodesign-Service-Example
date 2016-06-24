@@ -76,13 +76,12 @@ def post():
         # Once all features have been parsed, build a feature collection
         fc = {"type":"FeatureCollection", "features":allFeats}
         # Setup the API.
-    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = config.apisettings['serviceurl'], project_id=config.apisettings['projectid'], token=config.apisettings['apitoken'])
+    	myAPIHelper = GeodesignHub.GeodesignHubClient(url = config.apisettings['serviceurl'], token=config.apisettings['apitoken'])
         # Send the impact geometries back to the project
     	upload = myAPIHelper.post_gdservice_JSON(geometry=fc, jobid=jobid)
         # if status code is 202 / Accepted then all Ok
         if upload.status_code == 202:
             pass
-
 
     else:
         # If invalid geoJSON is submitted, return a 400 message.
